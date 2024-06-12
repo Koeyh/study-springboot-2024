@@ -1,5 +1,6 @@
 # study-springboot-2024
 부경대 Java 빅데이터 과정 Spring Boot 학습 리포지토리
+- 강의 내용 기록 및 복습용 리포지토리
 
 ## 1일차('24. 6. 12.), 2일차
 - Spring Boot 개요
