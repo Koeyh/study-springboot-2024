@@ -14,7 +14,7 @@
         - 서포트 기능 다수 존재(개발이 쉬워지도록)
         - JUnit 테스트, Log4J2 로그도 모두 포함 -> Spring에서는 별도 설치가 필요함
         - JSP, **Thymeleaf**, Mustache 편하게 사용 가능
-    <u> - _DB 연동이 매우 편해짐_</u>
+        - <u><em>DB 연동이 매우 편해짐</em></u>
 
     -MVC
         <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/mvcInfo.png" width="730">
