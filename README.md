@@ -81,6 +81,10 @@
         - Spring Boot Dashboard
             - Apps > Spring01 > Run|Debug 중에서 하나 아이콘 클릭 서버 실행
             - Run이 아닌 Debug로 실행해야 Hot code replace가 동작됨 ! 편리성을 위해 Debug 사용 고려
+                
+                <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/topToolBox.png" width="350">
+
+                
         - 브라우저 변경 설정
             - 설정(Ctrl + ,) > browser > Spring > Dashboard Open With 'Internal' -> 'external'로 변경
             - 가급적 Chorme을 기본 브라우저로 사용하는것을 추천 -> 웹 개발 시 개발자 도구 사용이 가장 용이함
