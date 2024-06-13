@@ -45,7 +45,7 @@
 - Spring Boot 프로젝트 생성(VS Code 사용 시)
     - 상단 메뉴창 > 보기 > 명령 팔레트(Ctrl + Shift + P)
         - Spring Initializr: Create a Gradle Project...
-        - Specify Spring Boot version : 3.2.6
+        - Specify Spring Boot version : 3.2.6 => 3.3.0
         - Specify project language : Java
         - Input Group Id : com.사용자 지정 도메인
         - Input Artifact Id : spring01 (대문자 사용 불가)
@@ -66,7 +66,7 @@
         3. ':compileJava' execution failed ... 발생 시 
             - Java JDK 잘못된 설치 x86(32bit) x64비트 혼용 설치
             - eclipse adoptium jdk 17ver 재설치, 시스템 환경설정
-            - build.gradle SpringBoot Framework 버전을 다운 3.3.0 -> 3.1.5
+            - build.gradle SpringBoot Framework 버전을 조정
             - VS Code 재시작
             
 
@@ -90,6 +90,28 @@
             - 설정(Ctrl + ,) > browser > Spring > Dashboard Open With 'Internal' -> 'external'로 변경
             - 가급적 Chorme을 기본 브라우저로 사용하는것을 추천 -> 웹 개발 시 개발자 도구 사용이 가장 용이함
     
+    ## 3일차 - 작성중
+    - ORacle 도커로 설치
+        - Docker는 Virtual Machine을 업그레이드한 시스템이다.
+        - 윈도우에 설치되어있는 Oracle을 서비스 종료
+            - 윈도우 서비스 내(services.msc) Oracle 관련 서비스 종료
+        - Docker에서 Oracle 이미지 컨테이너를 다운로드 후 실행
+        - Docker 설치 시 오류 Docker Desktop - WSL Update failed
+            - Docker Desctop 실행 종료 후
+            - Windows 업데이트 실행 최신판
+            - https://github.com/microsoft/WSL/releases 접속하여 wsl.2.x.x.x64.msi 다운로드 설치 한 뒤
+            - Docker Desktop 재실행
+        - Oracle 최신판 설치
+        ```shell
+        > docker --version
+        
+        > docker pull container-registry.oracle.com/database/free:latest
+
+        > docker run -d -p 1521:1521 --name oracle container-registry.oracle.com/database/free
+        ```
+        
+
+
     - Database 설정
         - H2 DB -> Spring Boot에서 손쉽게 사용 가능한 Inmemory DB / Oracle, MySQL, SQLServer와 쉽게 호환
         - Oracle -> 운영 시 사용할 DB
@@ -99,3 +121,45 @@
             > sqlplus system/password
             SQL> 
             ```
+
+    ##### 수정X
+    - Spring Boot + Mybatis
+        - application name : spring02
+        - Spring Boot 3.3.x 에는 MyBatis 없음
+        - Dependency 중 DB(H2, Oracle, MySQL 등)가 선택되어 있으면 웹 서버 초기 실행이 안됨
+
+        - build.gradle 확인
+        - application.properties 추가작성
+        ```properties
+        spring.application.name=spring02
+
+        ## 포트변경
+        server.port=8091
+
+        ## 로그 색상 변경
+        spring.output.ansi.enabled=always
+
+        ## 수정 사항 발생 시 서버 자동 재빌드 설정
+        spring.devtools.livereload.enabled=true
+        spring.devtools.restart.enabled=true
+
+        ## 로그 레벨 설정
+        logging.level.org.springframework=info
+        logging.level.org.zerock=debug
+
+        ## Oracle 설정
+        spring.datasource.username=pknusb
+        spring.datasource.password=pknu_p@ss
+        ## Docker 사용
+        spring.datasource.url=jdbc:orcle:thin@localhost:11521:FREE
+        spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+
+        ## MyBatis 설정
+        ## mapper 폴더 및에 여러가지 폴더가 내재, 확장자는 .xml이지만 어떤 파일명이건 상관X
+        mybatis.mapper-locations=classpath:mapper/**/*.xml
+        mybatis.type-aliases-package=com.koeyh.spring02.domain
+        ```
+
+        - MyBatis 적용
+            - Spring Boot 이전 resources/WEB-INF 위치에 root-context.xml에 DB, MyBatis 설정
+            - Spring Boot 이후 application.properties + Config.java 로 변경
