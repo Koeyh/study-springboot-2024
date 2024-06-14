@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Todo List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h3>Todo List</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>순번</th>
+                    <th>할 일</th>
+                    <th>완료 일자</th>
+                    <th>작성자</th>
+                    <th>완료 여부</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="todo : ${todoList}">
+                    <td th:text="${todo.tno}"></td>
+                    <td th:text="${todo.title}"></td>
+                    <td th:text="${todo.dueDate}"></td>
+                    <td th:text="${todo.writer}"></td>
+                    <td th:text="${todo.isDone}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

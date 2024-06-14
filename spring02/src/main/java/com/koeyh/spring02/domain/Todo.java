@@ -13,7 +13,7 @@ public class Todo {
 
     private LocalDateTime dueDate;
 
-    private String wirter;
+    private String writer;
 
-    private int isdone;
+    private int isDone;
 }

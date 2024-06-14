@@ -2,6 +2,14 @@
 부경대 Java 빅데이터 과정 Spring Boot 학습 리포지토리
 - 강의 내용 기록 및 복습용 리포지토리
 
+## 기억해야 할 에러
+```java
+public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
+        return todoService.getTodo(tno);
+    }
+```
+에서 _@PathVariable 뒤에 받아 올 정보를 ()내부에 입력해야한다!_
+
 ## 1일차('24. 6. 12.), 2일차
 - Spring Boot 개요
     - Java Web 개발 환경 발전 과정
@@ -90,7 +98,7 @@
             - 설정(Ctrl + ,) > browser > Spring > Dashboard Open With 'Internal' -> 'external'로 변경
             - 가급적 Chorme을 기본 브라우저로 사용하는것을 추천 -> 웹 개발 시 개발자 도구 사용이 가장 용이함
     
-    ## 3일차 - 작성중
+    ## 3일차, 4일차
     - Oracle 도커로 설치
 	- Docker는 Virtual Machine을 업그레이드한 시스템
 	- 윈도우 서비스 내(services.msc) Oracle 관련 서비스 종료

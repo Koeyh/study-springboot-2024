@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.koeyh.spring02.mapper.TodoMapper">
 
-    <select id="selectTodos" resultType="com.koeyh.spring02.domain.Todo">    
+    <select id="selectTodos" resultType="Todo">    
         SELECT TNO
             , TITLE
             , DUEDATE
@@ -12,7 +12,8 @@
             , ISDONE 
         FROM TODOS
     </select>
-    <select id="selectTodo" resultType="com.koeyh.spring02.domain.Todo" parameterType="int">
+
+    <select id="selectTodo" resultType="Todo" parameterType="int">
         SELECT TNO
             , TITLE
             , DUEDATE
