@@ -178,13 +178,14 @@
         spring.datasource.username=pknusb
         spring.datasource.password=pknu_p@ss
         ## Docker 사용
-        spring.datasource.url=jdbc:orcle:thin@localhost:11521:FREE
+        ### oracle에 r이 빠져서 발생한 오류를 한참동안 못찾았다..
+        spring.datasource.url=jdbc:oracle:thin@localhost:11521:FREE
         spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 
         ## MyBatis 설정
         ## mapper 폴더 및에 여러가지 폴더가 내재, 확장자는 .xml이지만 어떤 파일명이건 상관X
         mybatis.mapper-locations=classpath:mapper/**/*.xml
-        mybatis.type-aliases-package=com.koeyh.spring02.domain
+        mybatis.type-aliases-package=com.koeyh.spring02.mapper
         ```
 
         - MyBatis 적용
@@ -193,10 +194,12 @@
         
         - **MyBatis 개발 시 순서**
             <!-- 모델 -->
+            0. application.properties에 spring.datasource.url=jdbc:orcle:thin:@localhost:11521:FREE, thin 뒤 :이 삭제되어 있었음.
             1. Database 테이블 생성
             2. MyBatis 설정 -> /config/MyBatisConfig.java
             3. DB의 테이블과 일치하는 Java의 클래스 생성
                 - domain || entitiy || dto || vo 등
+                - DB 컬럼에 작성된 _는 Java Class에서 사용하지 않음
             4. DB와 데이터를 주고받을 수 있는 클래스 생성
                 - dao || **mapper** || repository 등
                 - 쿼리를 클래스 내에 작성 가능, xml로 분리 가능
@@ -206,6 +209,6 @@
                 - 서비스 인터페이스 : /service/*Service.java
                 - 서비스 구현 클래스 : /service/*serviceImple.java 생성, 작성
             7. 사용자가 접근하는 @RestController 클래스 생성 => _Controller_ 로 변경 가능
-            8. 경우에 따라(Optional) @SpringBootApplication 어노테이션이 존재하는 클래스에 SqlSessionFactory 빈을 생성하는 메서드 작성
+            8. ~~경우에 따라(Optional) @SpringBootApplication 어노테이션이 존재하는 클래스에 SqlSessionFactory 빈을 생성하는 메서드 작성~~
             <!-- 뷰 -->
             9. /resources/templates/Thymeleaf html 생성, 작성

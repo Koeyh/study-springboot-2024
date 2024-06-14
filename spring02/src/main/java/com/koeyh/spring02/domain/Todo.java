@@ -2,13 +2,10 @@ package com.koeyh.spring02.domain;
 
 import java.time.LocalDateTime;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
+// Getter, Setter, RequiredArgsConstructor 모두 포함된 어노테이션
 
-@Getter
-@Setter
-@ToString
+@Data
 public class Todo {
     private int tno;
 
@@ -19,5 +16,4 @@ public class Todo {
     private String wirter;
 
     private int isdone;
-
 }
