@@ -2,6 +2,10 @@
 부경대 Java 빅데이터 과정 Spring Boot 학습 리포지토리
 - 강의 내용 기록 및 복습용 리포지토리
 
+#### 구성
+- [1. Spring With MyBatis](spring02/README.md)
+- [2. Spring With MyBatis](spring03/README.md)
+
 ## 기억해야 할 에러
 ```java
 public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
