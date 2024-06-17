@@ -274,3 +274,11 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         - column 이름을 createDate로 만들면 DB 컬럼 명이 create_date로 생성됨
             - 잘 모르겠다 싶으면 데이터베이스 해당 테이블을 조회해서 컬럼 명 확인 할 것
             - 컬럼명에 '_'를 넣지 않으려면 @column(name = "createDate") 사용
+    8. /entity/Reply.java 생성
+    9. 두 엔티티간 @OneToMany, @ManyToOne 관계 설정
+    10. 웹 서버 재시작 후 h2-console에서 테이블 생성 확인
+    11. /repository/BoardRepository.java 빈 인터페이스(JpaRepository 상속) 생성
+    12. /repository/ReplyRepository.java 빈 인터페이스(JpaRepository 상속) 생성
+    13. applicaition.properties ddel-auto=create => ddl-auto=update 변경
+    14. /test/.../repository/BoardRepositoryTests.java 생성, 테스트 메서드 작성
+    
