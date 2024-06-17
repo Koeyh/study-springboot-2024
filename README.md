@@ -257,8 +257,20 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
     - spring03 폴더 내에서 Generate into this folder
 
 - Spring Boot JPA 프로젝트 개발 시작
+    ##### 설정
     1. build.gradle 의존성(dependencies) 확인
     2. application.properties 본 설정 입력(포트번호, 로그색상, 자동재빌드 여부, 로그레벨)
-    3. 수행 역할별 폴더 생성(controller, serviec, entitiy ...) || 어플리케이션 기능별 폴더 생성(save, create, update ..)
+    3. MVC 패턴에 맞게끔 역할별 폴더 생성(controller, serviec, entitiy ...) || 어플리케이션 기능별 폴더 생성(save, create, update ..)
         - 수행 역할별 폴더 생성 방식으로 진행
     4. /controller/MainController 생성, 기본 메서드 구현
+    5. application.properties H2 데이터베이스 설정, JPA 설정 추가
+    6. 웹 서버 실행, http://localhos:8080/h2-console DB 연결 확인
+    ##### 개발
+    7. /entity/Board.java 생성
+        - GenerationType 타입
+            - AUTO : SpringBoot에서 자동으로 선택(X)
+            - IDENTITY : MySQL, SQLServer
+            - SEQUENCE : Oracle(!)
+        - column 이름을 createDate로 만들면 DB 컬럼 명이 create_date로 생성됨
+            - 잘 모르겠다 싶으면 데이터베이스 해당 테이블을 조회해서 컬럼 명 확인 할 것
+            - 컬럼명에 '_'를 넣지 않으려면 @column(name = "createDate") 사용
