@@ -98,7 +98,7 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
             - 설정(Ctrl + ,) > browser > Spring > Dashboard Open With 'Internal' -> 'external'로 변경
             - 가급적 Chorme을 기본 브라우저로 사용하는것을 추천 -> 웹 개발 시 개발자 도구 사용이 가장 용이함
     
-    ## 3일차, 4일차
+    ## 2, 3일차
     - Oracle 도커로 설치
 	- Docker는 Virtual Machine을 업그레이드한 시스템
 	- 윈도우 서비스 내(services.msc) Oracle 관련 서비스 종료
@@ -220,3 +220,41 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
             8. ~~경우에 따라(Optional) @SpringBootApplication 어노테이션이 존재하는 클래스에 SqlSessionFactory 빈을 생성하는 메서드 작성~~
             <!-- 뷰 -->
             9. /resources/templates/Thymeleaf html 생성, 작성
+
+## 4일차
+- Spring Boot JPA + Oracle + Thymeleaf + React
+    - JPA => DB 설계를 하지 않고 Entitiy 클래스를 DB로 자동 생성 해 주는 기술, Query 생성도 불필요
+    - H2  => Oracle, MySQL, SQLServer등과 달리 Inmemory DB, 스프링 부트가 실행되면 같이 실행되는 DB
+        - 개발 편의성, 다른 DB로 전환 용이, 개발 과정 동안의 사용 추천(배포 전)
+    - Thymeleaf => JSP의 단점인 복잡한 템플릿 형태, 스파게티코드 해소(감소)를 위한 템플릿
+    - Bootstrap => 웹 디자인 및 CSS의 혁신적 기술. 정해진 틀에 커스터마이징도 가능
+    - 소셜 로그인 => 구글, 카카오, 네이버 등 소셜 로그인 기능 추가
+    - React => FE를 분리. BE 서버와 FE 서버를 따로 관리
+
+- Spring Boot JPA 프로젝트 생성
+    - 명령 팔레트로 시작
+        - Spring Initializr: Create a Gradle Project...
+        - Spring Boot version => 3.2.6
+        - project language => Java
+        - Group Id => com.koeyh
+        - Artifact Id => backboard
+        - Specify packaging type => Jar
+        - Specify java version => 21
+        - Choose dependencies => 
+            - 초기 설정
+                1. Spring Boot DevTools
+                2. Lombok
+                3. Spring Web
+                4. Thymeleaf
+            - 추후 설정
+                5. Oracle Driver(later)
+                6. H2 Database(later)
+                7. Data JPA(later)
+    - spring03 폴더 내에서 Generate into this folder
+
+- Spring Boot JPA 프로젝트 개발 시작
+    1. build.gradle 의존성(dependencies) 확인
+    2. application.properties 본 설정 입력(포트번호, 로그색상, 자동재빌드 여부, 로그레벨)
+    3. 수행 역할별 폴더 생성(controller, serviec, entitiy ...) || 어플리케이션 기능별 폴더 생성(save, create, update ..)
+        - 수행 역할별 폴더 생성 방식으로 진행
+    4. /controller/MainController 생성, 기본 메서드 구현
