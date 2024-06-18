@@ -318,4 +318,11 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
     5. /service/BoardService.java에 getBoard() 메서드 추가
     6. /controller/BoardController.java에 /board/detail/{bno} 실행 메서드 작성
     7. /templates/board/detail.html 생성
-    8. 
+    8. /templates/board/detail.html 댓글영역 추가
+    9. /service/ReplyService.java 생성, 댓글 저장 메서드 작성
+    10. /contorlle/ReplyController.java 생성, /reply/create/{bno}
+    11. Bootstrap 적용
+        - 다운로드 후 프로젝트에 위치
+        - CDN 링크 추가
+        - http://www.getbootstrap.com 다운로드 후 압축 해제
+        - bootstrap.mim.css, bootstrap.min.js를 resources/satic에 위치
