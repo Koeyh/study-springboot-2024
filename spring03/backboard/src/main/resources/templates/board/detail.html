@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome">
+        <title>개시팔목록</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body th:each=" board: ${boardList}">
+       <h2 th:text="${board.title}"></h2>
+       <div th:text="${board.contetn}"></div>
+    </body>
+</html>

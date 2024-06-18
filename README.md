@@ -285,4 +285,29 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
     13. applicaition.properties ddel-auto=create => ddl-auto=update 변경
     14. /test/.../repository/BoardRepositoryTests.java 생성, 테스트 메서드 작성
     15. 테스트 시작 > 웹 서버 실행 > h2-console 확인
+<<<<<<< Updated upstream
     
+=======
+
+## 5일차
+- Tip
+    - Java Test중 OpenJDK 64-Bit Server VM warning: Sharing is 빨간색 경고가 뜨면
+    - Ctrl + , (설정)> Java Test Config 입력 > settings.json 편집
+    ```json
+    "java.test.config": {
+        "vmArgs": [
+            "-Xshare:off"
+        ]
+    }
+    ```
+
+- Spring Boot JPA 프로젝트 개발 계속
+    15. jUnit 테스트로 CRUD 확인
+    16. /service/BoardService.java 생성 후 getList() 메서드 작성
+    17. /controller/BoardController.java 생성 후 /board/list 실행 할 수 있는 메서드 작성
+    18. /templates/board/list.html 생성
+        - Thymeleaf 속성
+            - th:if="${board != null} => 조건문
+            - th:each="board : ${boardList}" => 반복문
+            - th:text="${board.title} => Java 데이터 가져오기
+>>>>>>> Stashed changes

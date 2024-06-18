@@ -2,7 +2,6 @@ package com.koeyh.backboard.entity;
 
 import java.time.LocalDateTime;
 
-import org.hibernate.annotations.ManyToAny;
 import org.springframework.data.annotation.CreatedDate;
 
 import jakarta.persistence.Column;
