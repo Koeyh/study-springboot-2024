@@ -285,9 +285,6 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
     13. applicaition.properties ddel-auto=create => ddl-auto=update 변경
     14. /test/.../repository/BoardRepositoryTests.java 생성, 테스트 메서드 작성
     15. 테스트 시작 > 웹 서버 실행 > h2-console 확인
-<<<<<<< Updated upstream
-    
-=======
 
 ## 5일차
 - Tip
@@ -300,14 +297,25 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         ]
     }
     ```
+    - 저장 후 실행
+
+- Spring Boot 프로젝트 오류 처리(Visual Studio Code)
+    - 지속적인 리빌드 시에도 결과 반영이 잘 되지 않으면
+    - Github(Remote Repository)에 모두 commit, push 후
+    - Local Repository를 모두 삭제 후 새로 commit
+    - 프로젝트 새로 불러오기, 초기화
 
 - Spring Boot JPA 프로젝트 개발 계속
-    15. jUnit 테스트로 CRUD 확인
-    16. /service/BoardService.java 생성 후 getList() 메서드 작성
-    17. /controller/BoardController.java 생성 후 /board/list 실행 할 수 있는 메서드 작성
-    18. /templates/board/list.html 생성
+    {:start="15}
+    16. jUnit 테스트로 CRUD 확인
+    17. /service/BoardService.java 생성 후 getList() 메서드 작성
+    18. /controller/BoardController.java 생성 후 /board/list 실행 할 수 있는 메서드 작성
+    19. /templates/board/list.html 생성
         - Thymeleaf 속성
             - th:if="${board != null} => 조건문
             - th:each="board : ${boardList}" => 반복문
             - th:text="${board.title} => Java 데이터 가져오기
->>>>>>> Stashed changes
+    20. /service/BoardService.java에 getBoard() 메서드 추가
+    21. /controller/BoardController.java에 /board/detail/{bno} 실행 메서드 작성
+    22. /templates/board/detail.html 생성
+    23. 

@@ -32,11 +32,10 @@ public class BoardController {
     }
 
     @GetMapping("/detail/{bno}")
-    public String detail(Model model, @PathVariable("bno") Long bno) throws Exception{
+    public String detail(Model model, @PathVariable("bno") Long bno) throws Exception {
         Board board = this.boardService.getBoard(bno);
         model.addAttribute("board", board);
         return "board/detail";
-
     }
     
 }
