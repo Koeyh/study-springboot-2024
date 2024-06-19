@@ -1,5 +1,6 @@
 package com.koeyh.backboard.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,13 @@ public class BoardService {
         } else {
             throw new Exception("board not found");
         }
+    }
+
+       public void setBoard(String title, String content) {
+        // 빌더로 생성한 객체
+        Board board = Board.builder().title(title).content(content).createDate(LocalDateTime.now()).build();
+
+        this.boardRepository.save(board);
     }
 
 }
