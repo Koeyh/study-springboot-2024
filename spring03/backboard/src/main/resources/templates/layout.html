@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Back-Board Website</title>
+        <!-- <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" /> -->
+        <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+        <!-- 웹 사이트용 css -->
+        <link rel="stylesheet" type="text/css" th:href="@{/main.css}"> 
+        <!-- favicon 탭에 들어가는 아이콘 -->
+        <link rel="icon" href="https://getbootstrap.com//docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="https://getbootstrap.com//docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    </head>
+
+    <body>
+        <!-- 레이아웃에 적용 될 하위 페이지 위치 -->
+        <th:block layout:fragment="main-content"></th:block>
+
+        <script th:src="@{/bootstrap.min.js}"></script>    
+        <!-- 각 페이지마다 추가되어야 할 Javascript 영역 -->
+        <th:block layout:fragment="sub-script"></th:block>
+    </body>
+</html>

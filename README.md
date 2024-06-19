@@ -326,3 +326,10 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         - CDN 링크 추가
         - http://www.getbootstrap.com 다운로드 후 압축 해제
         - bootstrap.mim.css, bootstrap.min.js를 resources/satic에 위치
+    12. /templates/board/list.html, detail.html에 Bootstrap 적용
+
+
+## 6일차
+- Spring Boot JPA 프로젝트 개발 (계속)
+    1. Thymeleaf를 이용해 레이아웃 템플릿 생성
+    2. list.html, detail.html 레이아웃 템플릿 적용
