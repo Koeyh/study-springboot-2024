@@ -357,6 +357,9 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         - @NotEmpty는 공백(스페이스)을 허용
         - @NotBlank로 대체하여 해결
     17. 네비게이션바(navbar) 추가
+
+        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp005.png" width="730">
+
     18. /templates/layout.html에 추가
     19. 페이징 처리를 위해 테스트로 대량 데이터 추가
 
