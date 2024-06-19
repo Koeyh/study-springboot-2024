@@ -318,6 +318,9 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
     5. /service/BoardService.java에 getBoard() 메서드 추가
     6. /controller/BoardController.java에 /board/detail/{bno} 실행 메서드 작성
     7. /templates/board/detail.html 생성
+
+        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp003.png" width="730">
+
     8. /templates/board/detail.html 댓글영역 추가
     9. /service/ReplyService.java 생성, 댓글 저장 메서드 작성
     10. /contorlle/ReplyController.java 생성, /reply/create/{bno}
@@ -327,6 +330,9 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         - http://www.getbootstrap.com 다운로드 후 압축 해제
         - bootstrap.mim.css, bootstrap.min.js를 resources/satic에 위치
     12. /templates/board/list.html, detail.html에 Bootstrap 적용
+
+        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp003.png" width="730">
+
 
 
 ## 6일차
@@ -350,4 +356,10 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
     16. (문제) 각 입력창에 공백을 넣었을 때 입력되는 문제 발생 
         - @NotEmpty는 공백(스페이스)을 허용
         - @NotBlank로 대체하여 해결
-    17. 네비게이션바(navbar) 추가     
+    17. 네비게이션바(navbar) 추가
+    18. /templates/layout.html에 추가
+    19. 페이징 처리를 위해 테스트로 대량 데이터 추가
+
+## 7일차
+- Spring Boot JPA 프로젝트 개발 (계속)
+    1. 페이징

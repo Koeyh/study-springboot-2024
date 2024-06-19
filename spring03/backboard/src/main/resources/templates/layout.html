@@ -16,6 +16,26 @@
     </head>
 
     <body>
+        <!-- 네비게이션 바 -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary border-bottom" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">BackBoard</a>
+                <!-- 햄버거 버튼(토글), 브라우저 사이즈가 1200px보다 작아지면 발생-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- 햄버거 버튼 클릭 시 마다 토글 -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">로그인</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <!-- 레이아웃에 적용 될 하위 페이지 위치 -->
         <th:block layout:fragment="main-content"></th:block>
 
