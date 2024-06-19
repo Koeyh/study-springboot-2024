@@ -331,7 +331,7 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         - bootstrap.mim.css, bootstrap.min.js를 resources/satic에 위치
     12. /templates/board/list.html, detail.html에 Bootstrap 적용
 
-        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp003.png" width="730">
+        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp004.png" width="730">
 
 
 
