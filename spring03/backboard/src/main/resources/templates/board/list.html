@@ -15,9 +15,11 @@
             <tbody>
                 <tr th:each="board, loop : ${paging}">
                     <!-- 게시글 번호 !! -->
-                    <td th:text="${loop.count}"></td>
+                    <td th:text="${paging.getTotalElements - (paging.number * paging.size) -  loop.index}"></td>
                     <td>
                         <a th:href="@{|/board/detail/${board.bno}|}" th:text="${board.title}"></a>
+                        <span th:if="${#lists.size(board.replyList) > 0}" th:text="${#lists.size(board.replyList)}" 
+                              class="badge text-bg-primary"></span>
                     </td>
                     <td th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd HH:mm')}"></td>
                 </tr>
