@@ -39,4 +39,7 @@ public class Reply {
     // Relationship 다 대 일
     @ManyToOne
     private Board board;
+
+    @ManyToOne
+    private Member writer;
 }

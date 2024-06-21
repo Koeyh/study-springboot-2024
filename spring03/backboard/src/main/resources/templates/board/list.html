@@ -6,20 +6,25 @@
         </div>
         <table class="table table-light table-striped">
             <thead class="table-dark">
-                <tr>
+                <tr class="text-center">
                     <th>번호</th>
-                    <th>제목</th>
+                    <th style="width: 60%;">제목</th>
+                    <th>작성자</th>
                     <th>작성일자</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="board, loop : ${paging}">
+                <tr th:each="board, loop : ${paging}" class="text-center">
                     <!-- 게시글 번호 !! -->
                     <td th:text="${paging.getTotalElements - (paging.number * paging.size) -  loop.index}"></td>
-                    <td>
-                        <a th:href="@{|/board/detail/${board.bno}|}" th:text="${board.title}"></a>
+                    <td class="text-start">
+                        <a th:href="@{|/board/detail/${board.bno}|}" th:text="${board.title}" class="text-end"></a>
                         <span th:if="${#lists.size(board.replyList) > 0}" th:text="${#lists.size(board.replyList)}" 
                               class="badge text-bg-primary"></span>
+                    </td>
+                    <!-- 작성자 추가 -->
+                    <td>
+                        <span th:if="${board.writer != null}" th:text="${board.writer.username}"></span>
                     </td>
                     <td th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd HH:mm')}"></td>
                 </tr>

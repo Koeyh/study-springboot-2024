@@ -8,7 +8,12 @@
         <div class="card-body">
             <div th:text="${board.content}" class="card-text"></div>
             <div class="d-flex justify-content-end">
+                <!-- 작성자, 작성일 표시 뱃지 -->
                 <div class="badge text-bg-warning">
+                    <div class="mb-2">
+                        <span th:if="${board.writer != null}"
+                                th:text="${board.writer.username}"></span>
+                    </div>
                     <div th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd HH:mm')}"></div>
                 </div>
             </div>
@@ -23,7 +28,12 @@
         <div class="card-body">
             <div th:text="${reply.content}" class="card-text"></div>
             <div class="d-flex justify-content-end">
+                <!-- 작성자와 작성일 표시 배지 -->
                 <div class="badge text-bg-secondary">
+                    <div class="mb-2">
+                        <span th:if="${reply.writer != null}"
+                                th:text="${reply.writer.username}"></span>
+                    </div>
                     <div th:text="${#temporals.format(reply.createDate, 'yyyy-MM-dd HH:mm')}"></div>
                 </div>
             </div>
@@ -36,7 +46,9 @@
     <!-- 답변 기능 영역 -->
     <form th:action="@{|/reply/create/${board.bno}|}" th:object="${replyForm}" method="post" class="my-3">
         <div th:replace="~{errors :: formErrorFragment}"></div>
-        <textarea th:field="*{content}" cols="10" rows="10" class="form-control"></textarea>
+        <textarea sec:authorize="isAnonymous()" disabled th:field="*{content}" cols="10" rows="10" class="form-control"></textarea>
+        <textarea sec:authorize="isAuthenticated" enabled th:field="*{content}" cols="10" rows="10" class="form-control"></textarea>
+
         <div class="d-flex justify-content-end mt-2">
             <input type="submit" value="댓글 등록" class="btn btn-sm btn-secondary mx-1">
             <a href="/board/list" class="btn btn-secondary btn-sm">목록</a>
