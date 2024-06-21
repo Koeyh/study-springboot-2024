@@ -447,6 +447,9 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         - /templates/board/detail.html 게시글 작성자, 댓글 작성자 표시 추가
 
 
+    	<img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp007.png" width="730">
+
+
 ## 9일차
 - Spring Boot JPA 프로젝트 개발 (계속)
     - 수정, 삭제
