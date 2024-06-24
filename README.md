@@ -492,7 +492,7 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         - /repository/BoardRepository.java 메서드 추가
         - /service/BoardService.java에 getList() 메서드 추가생성
         - /controller/BoardController.java에 list()메서드 추가생성
-        - /templates/board/list.html에 검색창 추가
+        - /templates/board/list.html에 검색창 추가, searchForm 폼 영역 추가, 페이징 영역 수정, Javascript 추가
 
     4. 마크다운 적용, 마크다운 에디터 추가
         - 마크다운 뷰, 마크다운 에디터
