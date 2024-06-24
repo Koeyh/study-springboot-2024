@@ -8,14 +8,28 @@
         <div class="card-body">
             <div th:text="${board.content}" class="card-text"></div>
             <div class="d-flex justify-content-end">
+                <!-- 수정일자 표시 뱃지 -->
+                <div th:if="${board.modifyDate != null}" class="badge text-bg-primary text-bg-light">
+                    <div class="mb-2">
+                        <span>최종수정일</span>
+                    </div>
+                    <div th:text="${#temporals.format(board.modifyDate, 'yyyy-MM-dd HH:mm')}"></div>
+                </div>
                 <!-- 작성자, 작성일 표시 뱃지 -->
                 <div class="badge text-bg-warning">
                     <div class="mb-2">
-                        <span th:if="${board.writer != null}"
-                                th:text="${board.writer.username}"></span>
+                        <span th:if="${board.writer != null}" th:text="${board.writer.username}"></span>
                     </div>
                     <div th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd HH:mm')}"></div>
                 </div>
+
+            </div>
+            <!-- 수정, 삭제 버튼 영역 -->
+            <div th:if="${board.writer != null and #authentication.getPrincipal().getUsername() == board.writer.username}"
+                sec:authorize="isAuthenticated()" class="my-2 d-flex justify-content-end">
+                <a th:href="@{|/board/modify/${board.bno}|}" class="btn btn-sm btn-outline-warning mx-1">수정</a>
+                <a th:data-uri="@{|/board/delete/${board.bno}|}" href="javascript:void(0);"
+                    class="delete btn btn-sm btn-outline-danger">삭제</a>
             </div>
         </div>
     </div>
@@ -25,17 +39,30 @@
     <h5 th:text="|${#lists.size(board.replyList)}개의 댓글이 존재합니다|" class="border-bottom my-3 py-2"></h5>
     <!-- 문자열 입력 시 "||" 파이프 사용 필수 ! -->
     <div th:each="reply : ${board.replyList}" class="card border-secondary shadow-sm my-3">
+        <a th:id="|reply_${reply.rno}|"></a>
         <div class="card-body">
             <div th:text="${reply.content}" class="card-text"></div>
-            <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-end">
+                    <div th:if="${reply.modifyDate != null}" class="badge text-bg-primary text-bg-light">
+                        <div class="mb-2">
+                            <span>최종수정일</span>
+                        </div>
+                    <div th:text="${#temporals.format(reply.modifyDate, 'yyyy-MM-dd HH:mm')}"></div>
+                </div>
+
                 <!-- 작성자와 작성일 표시 배지 -->
                 <div class="badge text-bg-secondary">
                     <div class="mb-2">
-                        <span th:if="${reply.writer != null}"
-                                th:text="${reply.writer.username}"></span>
+                        <span th:if="${reply.writer != null}" th:text="${reply.writer.username}"></span>
                     </div>
                     <div th:text="${#temporals.format(reply.createDate, 'yyyy-MM-dd HH:mm')}"></div>
                 </div>
+            </div>
+            <div th:if="${reply.writer != null and #authentication.getPrincipal().getUsername() == reply.writer.username}"
+                sec:authorize="isAuthenticated()" class="my-2 d-flex justify-content-end">
+                <a th:href="@{|/reply/modify/${reply.rno}|}" class="btn btn-sm btn-outline-warning mx-1">수정</a>
+                <a th:data-uri="@{|/reply/delete/${reply.rno}|}" href="javascript:void(0);"
+                    class="delete btn btn-sm btn-outline-danger">삭제</a>
             </div>
         </div>
     </div>
@@ -46,14 +73,32 @@
     <!-- 답변 기능 영역 -->
     <form th:action="@{|/reply/create/${board.bno}|}" th:object="${replyForm}" method="post" class="my-3">
         <div th:replace="~{errors :: formErrorFragment}"></div>
-        <textarea sec:authorize="isAnonymous()" disabled th:field="*{content}" cols="10" rows="10" class="form-control"></textarea>
-        <textarea sec:authorize="isAuthenticated" enabled th:field="*{content}" cols="10" rows="10" class="form-control"></textarea>
+        <textarea sec:authorize="isAnonymous()" disabled th:field="*{content}" cols="10" rows="10"
+            class="form-control"></textarea>
+        <textarea sec:authorize="isAuthenticated" enabled th:field="*{content}" cols="10" rows="10"
+            class="form-control"></textarea>
 
         <div class="d-flex justify-content-end mt-2">
             <input type="submit" value="댓글 등록" class="btn btn-sm btn-secondary mx-1">
-            <a href="/board/list" class="btn btn-secondary btn-sm">목록</a>
+            <!-- 기존 코드 -->
+            <!-- <a th:href="/board/list" class="btn btn-secondary btn-sm">목록</a> -->
+            <!-- 앵커 기능을 위한 코드 / 조회 한 게시물이 있던 페이지를 출력해줌 -->
+            <a th:href="${prevUrl}" class="btn btn-secondary btn-sm">목록</a>
         </div>
     </form>
 </div>
+
+<script layout:fragment="sub-script" type="text/javascript">
+    const del_elements = document.getElementsByClassName('delete');
+
+    // 
+    Array.from(del_elements).forEach(function (element) {
+        element.addEventListener('click', function () {
+            if (confirm('삭제하시겠습니까?')) {
+                location.href = this.dataset.uri;
+            }
+        });
+    });
+</script>
 
 </html>

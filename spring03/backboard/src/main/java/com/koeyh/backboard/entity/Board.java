@@ -3,6 +3,7 @@ package com.koeyh.backboard.entity;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -41,6 +42,10 @@ public class Board {
     @CreatedDate
     @Column(name= "createDate" ,updatable = false) // 업데이트 없음
     private LocalDateTime createDate;
+
+    @LastModifiedDate
+    @Column(name = "modifyDate")
+    private LocalDateTime modifyDate;   // '24. 6. 24. 수정일자 추가
 
     // 한 명의 사용자가 여러개의 게시글을 작성할 수 있다. 다대일 설정
     @ManyToOne
