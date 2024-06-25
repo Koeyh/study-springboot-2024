@@ -20,7 +20,7 @@
             - ```java
                 <div th:utext="${@commonUtil.markdown( board.content )}" class="card-text"></div>```
 
-    3 카테고리 추가(QnA , 자유게시판)
+    3. 카테고리 추가(QnA , 자유게시판)
         - /entity/Category.java 클래스 추가
         - /reposiotory/CategoryRepository.java 인터페이스 추가
         - /service/CategoryService.java 추가
