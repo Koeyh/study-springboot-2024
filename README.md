@@ -507,7 +507,7 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         - JPA Query @Query(" ... ")에 작성
         - /service/BoardService.java getList()수정
 
-    4. 마크다운 적용, 마크다운 에디터 추가
+    2. 마크다운 적용, 마크다운 에디터 추가
         - Wysiwyg 에디터 - CKEditor(https://ckeditor.com/), TinyMCE
         - simplemde(https://simplemde.com/) View On Github 클릭 >> CDN 링크 복사, layout.html 링크 추가
         - create.html, textarea id content를 simplemde로 변환하는 js 추가
@@ -518,8 +518,6 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
             - th:text를 ***th:utext로 변경***
             - ```java
                 <div th:utext="${@commonUtil.markdown( board.content )}" class="card-text"></div>
-            ```
-
     3 카테고리 추가(게시판, QnA , 공지사항)
     - 비밀번호 찾기, 비밀번호 변경
     - 조회수 추가
