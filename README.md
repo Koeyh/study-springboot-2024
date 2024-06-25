@@ -5,6 +5,9 @@
 - MyBatis에 대한 부족한 부분은 개인적으로 학습 및 소형 프로젝트를 통해 숙지하기
 - _[Spring Boot With MyBatis 개인학습/프로젝트](https://github.com/Koeyh/practice-SpringBoot)_
 
+### 환경
+- SpringBoot, 
+
 #### 구성
 - _[1. Spring Boot(3.2.6) With MyBatis](https://github.com/Koeyh/study-springboot-2024/tree/main/spring02)_
 - _[2. Spring Boot(3.3.0) With JPA](https://github.com/Koeyh/study-springboot-2024/tree/main/spring03/backboard)_
@@ -498,15 +501,26 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - Spring Boot JPA 프로젝트 개발 (계속)
     1. 검색기능(계속) - JPA Query
         - @Query 어노테이션으로 직접 쿼리를 작성
-        - @Query는 단순 쿼리가 아니기 때문에 JpaRepository가 자동으로 만들어 줄 수 없을 때 사용
-        - DB의 표준 Query와는 상이함(Java의 Entity와 일치)
+        - ***@Query는 단순 쿼리가 아니기 때문에 JpaRepository가 자동으로 만들어 줄 수 없을 때 사용***
+        - ***DB의 표준 Query와는 상이함(Java의 Entity와 일치)***
         - /repository/BoardRepository.java의 findAllByKeyword() 메서드 추가
+        - JPA Query @Query(" ... ")에 작성
+        - /service/BoardService.java getList()수정
 
     4. 마크다운 적용, 마크다운 에디터 추가
-        - 마크다운 뷰, 마크다운 에디터
+        - Wysiwyg 에디터 - CKEditor(https://ckeditor.com/), TinyMCE
+        - simplemde(https://simplemde.com/) View On Github 클릭 >> CDN 링크 복사, layout.html 링크 추가
+        - create.html, textarea id content를 simplemde로 변환하는 js 추가
 
+        - (설정) build.gradle 마크다운 뷰 의존성 추가
+        - /common/CommonUtil.java 생성
+        - /templates/board/detail.html 마크다운 뷰어 적용
+            - th:text를 ***th:utext로 변경***
+            - ```java
+                <div th:utext="${@commonUtil.markdown( board.content )}" class="card-text"></div>
+            ```
 
-    - 카테고리 추가(게시판, QnA , 공지사항)
+    3 카테고리 추가(게시판, QnA , 공지사항)
     - 비밀번호 찾기, 비밀번호 변경
     - 조회수 추가
 

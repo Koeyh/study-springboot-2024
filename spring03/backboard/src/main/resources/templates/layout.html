@@ -11,6 +11,8 @@
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <!-- 웹 사이트용 css -->
         <link rel="stylesheet" type="text/css" th:href="@{/main.css}"> 
+        <!-- SimpleMDE css -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
         <!-- favicon 탭에 들어가는 아이콘 -->
         <link rel="icon" href="https://getbootstrap.com//docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
         <link rel="icon" href="https://getbootstrap.com//docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
@@ -48,6 +50,8 @@
         <!-- <script th:src="@{/bootstrap.min.js}"></script>     -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- SimpleMDE js CDN -->
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
         <!-- 각 페이지마다 추가되어야 할 Javascript 영역 -->
         <th:block layout:fragment="sub-script"></th:block>
     </body>

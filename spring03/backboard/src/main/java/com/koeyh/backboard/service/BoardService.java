@@ -53,8 +53,9 @@ public class BoardService {
         sorts.add(Sort.Order.desc("createDate"));
         Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts)); // pazesize를 동적으로도 변경 가능
 
-        Specification<Board> spec = searchBoard(keyword);
-        return this.boardRepository.findAll(spec, pageable);
+        // Specification<Board> spec = searchBoard(keyword);
+        // return this.boardRepository.findAll(spec, pageable); // toPredicate로 쿼리 생성로직을 만들어서 진행하는 방식
+        return this.boardRepository.findAllByKeyword(keyword, pageable);
     }
 
     public Board getBoard(Long bno) {

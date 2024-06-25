@@ -6,7 +6,8 @@
     <h3 th:text="${board.title}" class="border-bottom border-dark py-2"></h3>
     <div class="card text-bg-light my-3">
         <div class="card-body">
-            <div th:text="${board.content}" class="card-text"></div>
+            <!-- 마크다운 뷰 적용 th:utext, (@CommonUtil.markdown( board.content )) -->
+            <div th:utext="${@commonUtil.markdown( board.content )}" class="card-text"></div>
             <div class="d-flex justify-content-end">
                 <!-- 수정일자 표시 뱃지 -->
                 <div th:if="${board.modifyDate != null}" class="badge text-bg-primary text-bg-light">
@@ -41,7 +42,7 @@
     <div th:each="reply : ${board.replyList}" class="card border-secondary shadow-sm my-3">
         <a th:id="|reply_${reply.rno}|"></a>
         <div class="card-body">
-            <div th:text="${reply.content}" class="card-text"></div>
+            <div th:utext="${@commonUtil.markdown( reply.content )}" class="card-text"></div>
                 <div class="d-flex justify-content-end">
                     <div th:if="${reply.modifyDate != null}" class="badge text-bg-primary text-bg-light">
                         <div class="mb-2">
