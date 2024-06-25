@@ -1,12 +1,10 @@
 package com.koeyh.backboard.service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.cglib.core.Local;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -23,7 +21,6 @@ import com.koeyh.backboard.entity.Member;
 import com.koeyh.backboard.entity.Reply;
 import com.koeyh.backboard.repository.BoardRepository;
 
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Join;

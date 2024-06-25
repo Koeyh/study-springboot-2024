@@ -78,10 +78,12 @@
         <!-- 페이징 끝 -->
         <!-- 검색 부분 영역 -->
         <form th:action="@{/board/list}" method="get" id="searchForm">
+            <!-- id, name 모두 필수적으로 들어가 있어야 한다. / GET URL ?kw=kw&page=1과 같이 계속해서 가지고 감-->
             <input type="hidden" id="kw" name="kw" th:value="${kw}">
             <input type="hidden" id="page" name="page" th:value="${paging.number}">
         </form>
     </div>
+    
     <script layout:fragment="sub-script" type="text/javascript">
         const page_elements = document.getElementsByClassName("page-link");
         Array.from(page_elements).forEach(function(element) {

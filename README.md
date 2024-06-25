@@ -492,7 +492,15 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
         - /repository/BoardRepository.java 메서드 추가
         - /service/BoardService.java에 getList() 메서드 추가생성
         - /controller/BoardController.java에 list()메서드 추가생성
-        - /templates/board/list.html에 검색창 추가, searchForm 폼 영역 추가, 페이징 영역 수정, Javascript 추가
+        - /templates/board/list.html에 검색창 추가, searchForm 폼 영역 추가, **페이징 영역 수정, Javascript 추가**
+
+## 10일차
+- Spring Boot JPA 프로젝트 개발 (계속)
+    1. 검색기능(계속) - JPA Query
+        - @Query 어노테이션으로 직접 쿼리를 작성
+        - @Query는 단순 쿼리가 아니기 때문에 JpaRepository가 자동으로 만들어 줄 수 없을 때 사용
+        - DB의 표준 Query와는 상이함(Java의 Entity와 일치)
+        - /repository/BoardRepository.java의 findAllByKeyword() 메서드 추가
 
     4. 마크다운 적용, 마크다운 에디터 추가
         - 마크다운 뷰, 마크다운 에디터
