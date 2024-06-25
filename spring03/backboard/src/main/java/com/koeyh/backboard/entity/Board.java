@@ -56,4 +56,7 @@ public class Board {
     // 게시글이 지워지면, 해당 게시글 번호를 가진 댓글도 함께 삭제됨
     @OneToMany(mappedBy = "board", cascade = CascadeType.REMOVE)
     private List<Reply> replyList;
+
+    @ManyToOne
+    private Category category;  // free, qna로 구분해서 글 생성 가능
 }

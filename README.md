@@ -58,13 +58,31 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - 검색 기능 추가
 
 ## [10일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day10.md)
-- 진행중
+- 검색기능 추가 마무리
+- 마크다운, 마크다운 뷰 적용
+- Category 분류기능 추가(free, qna 등)
+
+## [11일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day11.md)
+
+## [12일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day12.md)
 
 
+## 남은 학습 목표
+- 조회수 추가
+    - /entity/Board.java에 조회수 필드 추가
+    - /service/BoardService.java에 메서드 추가
+    - /controller/BoardController.java에 detail.
+    - /templates/board/list.html 조회수 컬럼 추가
 
+- 비밀번호 찾기, 비밀번호 변경
 
+- React 적용 고민
+- 리액트로 프론트엔드 설정
+- 타임리프 - 리액트로 변경
+- 스프링부트 RestAPI 작업 
 
-
-
-
-
+- AWS 라이트세일
+- 서버 접속 프로그램 설정
+- 웹 서버 배포
+- 8080 -> 80 서버로 변경
+- http -> https 변경

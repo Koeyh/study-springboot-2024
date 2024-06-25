@@ -18,18 +18,18 @@
         - /templates/board/detail.html 마크다운 뷰어 적용
             - th:text를 ***th:utext로 변경***
             - ```java
-                <div th:utext="${@commonUtil.markdown( board.content )}" class="card-text"></div>
-    3 카테고리 추가(게시판, QnA , 공지사항)
-    - 비밀번호 찾기, 비밀번호 변경
-    - 조회수 추가
+                <div th:utext="${@commonUtil.markdown( board.content )}" class="card-text"></div>```
 
-    - React 적용 고민
-    - 리액트로 프론트엔드 설정
-    - 타임리프 - 리액트로 변경
-    - 스프링부트 RestAPI 작업 
+    3 카테고리 추가(QnA , 자유게시판)
+        - /entity/Category.java 클래스 추가
+        - /reposiotory/CategoryRepository.java 인터페이스 추가
+        - /service/CategoryService.java 추가
+        - /entity/Board.java에 category 속성(클래스의 변수이자 테이블의 컬럼) 추가
+        - /service/BoardService.java 조회 조건에 getList(), searchBoard(), ***setBoard()*** 추가 수정
+        - 카테고리를 자유게시판과 질문응답 게시판으로 분리
+        - /templates/layout.html에 navbar.html 추가
+        - /controller/BoardController.java에 CategoryService, GetMapping 메서드에 카테고리 매개변수 추가
+        - /templates/list.html 카테고리 변수 추가
 
-    - AWS 라이트세일
-    - 서버 접속 프로그램 설정
-    - 웹 서버 배포
-    - 8080 -> 80 서버로 변경
-    - http -> https 변경
+    
+
