@@ -5,8 +5,8 @@
 - MyBatis에 대한 부족한 부분은 개인적으로 학습 및 소형 프로젝트를 통해 숙지하기
 - _[Spring Boot With MyBatis 개인학습/프로젝트](https://github.com/Koeyh/practice-SpringBoot)_
 
-### 환경
-- SpringBoot, 
+### 환경 및 도구
+- SpringBoot, MyBatis, JPA, Gradle, Thymeleaf, Oracle, DBeaver, Docker
 
 #### 구성
 - _[1. Spring Boot(3.2.6) With MyBatis](https://github.com/Koeyh/study-springboot-2024/tree/main/spring02)_
