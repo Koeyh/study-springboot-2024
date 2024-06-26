@@ -19,7 +19,7 @@ public class MainController {
     
     @GetMapping("/")
     public String main() {
-        return "redirect:/board/list";      // localhost:8080 으로 접속하면 localhost:8080/board/list로 변경
+        return "redirect:/board/list/free";      // localhost:8080 으로 접속하면 localhost:8080/board/list로 변경 => 게시판 카테고리 설정
     }
     
 }

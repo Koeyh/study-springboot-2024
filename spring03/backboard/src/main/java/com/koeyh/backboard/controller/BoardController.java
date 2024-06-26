@@ -59,6 +59,7 @@ public class BoardController {
     // }
 
     // '24. 6. 24. list 새로 변경
+    // '24. 6. 26. URL입력으로 list 접근 시 자유게시판 띄우기
     @GetMapping("/list")
     public String list(Model model, @RequestParam(value="page", defaultValue = "0") int page,
                        @RequestParam(value = "kw", defaultValue = "") String keyword) {
@@ -66,7 +67,7 @@ public class BoardController {
         Page<Board> paging = this.boardService.getList(page, keyword); 
         model.addAttribute("paging", paging);   
         model.addAttribute("kw", keyword);
-        return "board/list";    
+        return "board/list/free";    
     }
 
     // '24. 6. 25. 마지막, 카테고리 추가
@@ -90,7 +91,8 @@ public class BoardController {
     public String detail(Model model, @PathVariable("bno") Long bno, ReplyForm replyForm, HttpServletRequest request) {
         String prevUrl = request.getHeader("referer");  // 이전페이지 변수에 담기
         log.info(String.format("▶▶▶▶▶이전 페이지 : %s", prevUrl));
-        Board board = this.boardService.getBoard(bno);
+        // Board board = this.boardService.getBoard(bno);
+        Board board = this.boardService.hitBoard(bno);  // '24. 6. 26. 조회수 증가 후 리턴
         model.addAttribute("board", board);
         model.addAttribute("prevUrl", prevUrl); // 이전 페이지 URL 뷰에 전달
         return "board/detail";

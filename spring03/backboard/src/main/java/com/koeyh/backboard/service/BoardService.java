@@ -28,6 +28,7 @@ import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.JoinType;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -156,5 +157,22 @@ public class BoardService {
                             ));   // 댓글 내용에서 검색
             }
         };
+    }
+
+    // 조회수 증가 메서드
+    @Transactional  // 조회하면서 UPDATE를 실행하므로 트랜잭션 적용
+    public Board hitBoard(Long bno) {
+        // Optional 타입의 기능 : Null 체크
+        Optional<Board> oboard = this.boardRepository.findByBno(bno);
+
+        if(oboard.isPresent()) {
+            Board board = oboard.get();
+            // board.setHit(board.getHit() + 1);   // 첫 값이 null이면 잘 될까? 안되네
+            board.setHit(Optional.ofNullable(board.getHit()).orElse(0) + 1);    // board.getHit()의 값이 null이면 0으로 세팅한 후 로직 수행
+
+            return board;
+        } else {
+            throw new NotFoundException("Board Not Found !");
+        }
     }
 }

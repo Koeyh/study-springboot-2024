@@ -2,6 +2,7 @@ package com.koeyh.backboard.entity;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -46,6 +47,10 @@ public class Board {
     @LastModifiedDate
     @Column(name = "modifyDate")
     private LocalDateTime modifyDate;   // '24. 6. 24. 수정일자 추가
+
+    // @ColumnDefault("0") // 생성될 때 초기값 0이 들어감
+    // @Column(columnDefinition = "integer default 0") // 위와 동일
+    private Integer hit; // '24. 6. 26. 조회수 추가 
 
     // 한 명의 사용자가 여러개의 게시글을 작성할 수 있다. 다대일 설정
     @ManyToOne
