@@ -8,7 +8,7 @@ _학습기간 : '24. 6. 12 ~ '24. 7. 4._
 - _[Spring Boot With MyBatis 개인학습/프로젝트](https://github.com/Koeyh/practice-SpringBoot)_
 
 ### 환경 및 도구
-- SpringBoot, MyBatis, JPA, Gradle, Thymeleaf, Oracle, DBeaver, Docker
+- SpringBoot, MyBatis, JPA, Gradle, Thymeleaf, Oracle, H2, DBeaver, Docker
 
 #### 구성
 - _[1. Spring Boot(3.2.6) With MyBatis](https://github.com/Koeyh/study-springboot-2024/tree/main/spring02)_
