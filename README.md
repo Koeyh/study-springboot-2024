@@ -1,5 +1,7 @@
 # study-springboot-2024
-부경대 Java 빅데이터 과정 Spring Boot 학습 리포지토리
+_부경대 Java 빅데이터 과정 Spring Boot 학습 리포지토리_
+_학습기간 : '24. 6. 12 ~ '24. 7. 4._
+
 - 강의 내용 기록 및 복습용 리포지토리
 - 강의의 주된 구성은 Thymeleaf와 JPA를 이용한 Spring Boot 사용
 - MyBatis에 대한 부족한 부분은 개인적으로 학습 및 소형 프로젝트를 통해 숙지하기
