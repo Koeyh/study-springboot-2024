@@ -67,7 +67,7 @@ public class BoardController {
         Page<Board> paging = this.boardService.getList(page, keyword); 
         model.addAttribute("paging", paging);   
         model.addAttribute("kw", keyword);
-        return "board/list/free";    
+        return "board/list";    
     }
 
     // '24. 6. 25. 마지막, 카테고리 추가

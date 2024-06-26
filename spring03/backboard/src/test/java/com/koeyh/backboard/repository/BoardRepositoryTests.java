@@ -80,4 +80,4 @@
     //     this.boardRepository.delete(dbd);
     //     System.out.println("삭제 완료");
     // }
-}
+// }
