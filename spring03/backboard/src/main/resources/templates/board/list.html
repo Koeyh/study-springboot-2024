@@ -23,6 +23,8 @@
                     <th style="width: 60%;">제목</th>
                     <th>작성자</th>
                     <th>작성일자</th>
+                    <!-- 임시 -->
+                    <th>조회수</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,12 +35,15 @@
                         <a th:href="@{|/board/detail/${board.bno}|}" th:text="${board.title}" class="text-end"></a>
                         <span th:if="${#lists.size(board.replyList) > 0}" th:text="${#lists.size(board.replyList)}" 
                               class="badge text-bg-primary"></span>
+                        <span th:if="${#temporals.format(board.createDate, 'yyyyMMdd').equals(#temporals.format(#temporals.createNow(), 'yyyyMMdd'))}"
+                              class="badge badge-sm text-bg-danger">new</span>
                     </td>
                     <!-- 작성자 추가 -->
                     <td>
                         <span th:if="${board.writer != null}" th:text="${board.writer.username}"></span>
                     </td>
                     <td th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+                    <td th:text="${board.hit}"></td>
                 </tr>
             </tbody>
         </table>
