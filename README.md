@@ -63,26 +63,28 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - Category 분류기능 추가(free, qna 등)
 
 ## [11일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day11.md)
+- 신규 게시물 new뱃지 생성
+- 게시물 조회수 표시 기능 추가
+- AWS 연결 설정
 
 ## [12일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day12.md)
 
 
 ## 남은 학습 목표
-- 조회수 추가
-    - /entity/Board.java에 조회수 필드 추가
-    - /service/BoardService.java에 메서드 추가
-    - /controller/BoardController.java에 detail.
-    - /templates/board/list.html 조회수 컬럼 추가
 
+- 에러페이지 작업(404, 500, etc)
 - 비밀번호 찾기, 비밀번호 변경
+- 소셜 로그인(카카오, 네이버, 구글) 구글
+- 파일업로드 - AWS S3 체크
 
-- React 적용 고민
+
+- 리액트 적용
 - 리액트로 프론트엔드 설정
-- 타임리프 - 리액트로 변경
-- 스프링부트 RestAPI 작업 
+- thymeleaf - 리액트로 변경
+- Spring boot RestAPI 작업
 
-- AWS 라이트세일
+- AWS 라이트세일 가입
 - 서버 접속 프로그램 설정
-- 웹 서버 배포
-- 8080 -> 80 서버로 변경
-- http -> https 변경
+- 웹서버 배포
+- 8080 -> 80 서버
+- http -> https 변경	
