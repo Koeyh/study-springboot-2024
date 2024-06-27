@@ -71,6 +71,13 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 
 ## ***[12일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day12.md)***
 
+## [13일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day13.md)
+
+## [14일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day14.md)
+
+## [15일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day15.md)
+
+
 
 ## 남은 학습 목표
 
