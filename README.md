@@ -92,8 +92,5 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - thymeleaf - 리액트로 변경
 - Spring boot RestAPI 작업
 
-- AWS 라이트세일 가입
-- 서버 접속 프로그램 설정
-- 웹서버 배포
 - 8080 -> 80 서버
 - http -> https 변경	

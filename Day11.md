@@ -25,7 +25,7 @@
         - 인스턴스 생성 클릭 !
         - 실행 중 확인 > ⁝ 클릭 > 관리
         - 네트워킹 > 고정 IP연결 > 아이피명 입력 > 생성 
-        - IPv4 방화벽 > 규칙 추가 > 8080 추가
+        - IPv4 방화벽 > 규칙 추가 > 8080 추가 * 
         - 계정 > SSH 키 > 기본 키 다운로드(*.pem) > 이름변경(옵션)
 
     - PuTTY AWS 리눅스서버 연결
@@ -50,25 +50,25 @@
     
     - 설정 변경
         ```shell
-        > sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime (한국 시간 변경)
-        > hostname
-        > sudo hostnamectl set-hostname hugo83
-        > sudo reboot (서버 재시작)
+        > sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime (한국 시간 변경) *
+        > hostname *
+        > sudo hostnamectl set-hostname hugo83 *
+        > sudo reboot (서버 재시작) *
 
-        > sudo apt-get update (전체서버 패키지 업데이트)
+        > sudo apt-get update (전체서버 패키지 업데이트) * 
         > java
         > sudo apt-get install openjdk-21-jdk
-            Do you want to continue? [Y/n] y
+            Do you want to continue? [Y/n] y *
         > java -version
-        openjdk version "21.0.3" 2024-04-16
-        OpenJDK Runtime Environment (build 21.0.3+7-Ubuntu-122.04.1)
-        OpenJDK 64-Bit Server VM (build 21.0.3+7-Ubuntu-122.04.1, mixed mode, sharing)
+        openjdk 21.0.3 2024-04-16
+        OpenJDK Runtime Environment (build 21.0.3+9-Ubuntu-1ubuntu122.04.1)
+        OpenJDK 64-Bit Server VM (build 21.0.3+9-Ubuntu-1ubuntu122.04.1, mixed mode, sharing)
         ```
     - VSCode
         - Gradle for java > Tasks > build > bootJar
-        - *-SNAPSHOT.jar 생성 확인
+        - *-SNAPSHOT.jar 생성 확인 *
     - FileZilla
-        - *.jar > AWS로 전송
+        - *.jar > AWS로 전송 *
 
     - PuTTY 
         ```shell
@@ -79,7 +79,7 @@
         backboard-1.0.1-SNAPSHOT.jar
         > java -jar backboard-1.0.1-SNAPSHOT.jar 
         ```
-        - sudo java -jar ... 로 실행하면 안됨 !
+        - sudo java -jar ... 로 실행하면 안됨 ! *
 
     - 스프링부트서버 백그라운드 실행 쉘 작성
         - > nano start.sh

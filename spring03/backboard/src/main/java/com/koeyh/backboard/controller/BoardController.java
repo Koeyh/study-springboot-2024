@@ -60,7 +60,7 @@ public class BoardController {
 
     // '24. 6. 24. list 새로 변경
     // '24. 6. 26. URL입력으로 list 접근 시 자유게시판 띄우기
-    @GetMapping("/list")
+    // @GetMapping("/list")
     public String list(Model model, @RequestParam(value="page", defaultValue = "0") int page,
                        @RequestParam(value = "kw", defaultValue = "") String keyword) {
 
