@@ -32,7 +32,9 @@ public class SecurityConfig {
             //                                                     new AntPathRequestMatcher("/member/login"))
             // .permitAll())
             // CSRF 위/변조 공격을 막는 부분 해제, 특정 URL은 csrf공격 리스트에서 제거
-            .csrf((csrf) -> csrf.ignoringRequestMatchers(new AntPathRequestMatcher("/h2-console/**")))
+            // .csrf((csrf) -> csrf.ignoringRequestMatchers(new AntPathRequestMatcher("/h2-console/**")))
+            // '24. 6. 27. REST API 전달 시 403에러 발생
+            .csrf((csrf) -> csrf.disable())
             // h2-console 페이지가 frameset, frame으로 구성, CORS와 유사한 옵션 추가
             .headers((headers) -> headers
                 .addHeaderWriter(new XFrameOptionsHeaderWriter(

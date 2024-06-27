@@ -8,9 +8,14 @@
     - /controller/CustomErrorController.java 생성
     
 2. 비밀번호 변경
-    - 비밀번호 초기화 기능 추가(메일서버 세팅)
-    - 비밀번호 초기화 화면으로 이동
-    - 비밀번호, 비밀번호 확인 입력
-    
+    - build.gradle 메일을 보내기 위한 의존성 추가
+    - application.properties 메일설정(네이버) 입력
+    - 네이버 메일 설정
+        - 설정 >> 환경설정 >> POP3/SMTP 설정
 
-3. 소셜 로그인(카카오, 네이버, 구글) 구글
+        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp009.png" width="730">
+
+    - ***/config/SecurityConfig.java CSRF 설정 변경***
+    - /service/MailService.java 생성
+    - /restcontroller/MailController.java 생성
+    - https://www.postman.com/ 다운로드

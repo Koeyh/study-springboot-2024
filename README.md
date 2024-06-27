@@ -70,6 +70,9 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - AWS 연결 설정
 
 ## ***[12일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day12.md)***
+- AWS 연결 확인
+- 비밀번호 변경을 위한 네이버 메일 연결 설정
+- Postman 사용하여 테스트 메일 전송 확인
 
 ## [13일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day13.md)
 
@@ -81,8 +84,6 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 
 ## 남은 학습 목표
 
-- 에러페이지 작업(404, 500, etc)
-- 비밀번호 찾기, 비밀번호 변경
 - 소셜 로그인(카카오, 네이버, 구글) 구글
 - 파일업로드 - AWS S3 체크
 
