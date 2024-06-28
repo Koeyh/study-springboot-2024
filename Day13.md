@@ -1,11 +1,12 @@
 ## ***13일차***
 - Spring Boot JPA 프로젝트 개발 계속
-    0. 메일 작업 중 생긴 오류
+  
+    1. 메일 작업 중 생긴 오류
         - 로그인 후 게시글 작성 시 500에러 발생
         - CSRF토큰 떄문에 발생하는 오류 
         - /templates/board/create.html, /templates/reply/modify 에 있는 CSRF관련 태그 주석처리! 
 
-    1. 비밀번호 초기화(계속)
+    2. 비밀번호 초기화(계속)
         - /templates/member/login.html 비밀번호 초기화 버튼
         - /controller/MemberController.java reset()메서드 추가
         - /templates/member/reset.html 생성 -> register.html 가져와서 작성 (비밀번호 초기화 뷰)
@@ -14,7 +15,8 @@
         - /service/MailService.java에 메일 전송 메서드 생성, 수정
             - UUID를 생성해서 메일로 전송하는 기능 추가
 
-            <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp010.png" width="730">
+
+        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp010.PNG" width="730">
 
 
         - /entity/Reset.java 생성 -> H2콘솔에서 해당 테이블이 생성되는지 확인
@@ -33,4 +35,4 @@
         - /service/MemberService.java의 setMember() 메서드 추가
         - 새로 입력받은 패스워드에 인코딩을 적용하지 않아 오류 발생, 인코딩 적용으로 해결
 
-            <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp011.png" width="730">
+        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp011.PNG" width="730">
