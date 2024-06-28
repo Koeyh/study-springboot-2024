@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 
+
 @RequiredArgsConstructor
 @RequestMapping("/member")
 @Controller
@@ -25,8 +26,15 @@ public class MemberController {
     // 로그인
     @GetMapping("/login")
     public String login() {
-        return "member/login";
+        return "member/login";  // /templates/member.reset.html 호출
     }
+
+    @GetMapping("/reset")
+    public String reset() {
+        return "member/reset";
+    }
+    
+
 
     // 회원가입
     @GetMapping("/register")

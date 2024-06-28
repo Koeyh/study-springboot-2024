@@ -6,6 +6,7 @@ _학습기간 : '24. 6. 12 ~ '24. 7. 4._
 - 강의의 주된 구성은 Thymeleaf와 JPA를 이용한 Spring Boot 사용
 - MyBatis에 대한 부족한 부분은 개인적으로 학습 및 소형 프로젝트를 통해 숙지하기
 - _[Spring Boot With MyBatis 개인학습/프로젝트](https://github.com/Koeyh/practice-SpringBoot)_
+- _이전 프로젝트에서 사용 해 보지 못한 Spring Security에 대한 복습 철저히 하기_
 
 ### 환경 및 도구
 - SpringBoot, MyBatis, JPA, Gradle, Thymeleaf, Oracle, H2, DBeaver, Docker
@@ -75,6 +76,7 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - Postman 사용하여 테스트 메일 전송 확인
 
 ## [13일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day13.md)
+- 비밀번호 초기화 목적 메일 발송 기능 추가
 
 ## [14일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day14.md)
 
