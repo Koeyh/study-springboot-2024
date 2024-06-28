@@ -75,12 +75,13 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - 비밀번호 변경을 위한 네이버 메일 연결 설정
 - Postman 사용하여 테스트 메일 전송 확인
 
-## [13일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day13.md)
+## ***[13일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day13.md)***
 - 비밀번호 초기화 목적 메일 발송 기능 추가
+- 메일로 전송된 링크로 비밀번호 재설정 기능 적용(추가) 완료
 
-## [14일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day14.md)
+## ***[14일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day14.md)***
 
-## [15일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day15.md)
+## ***[15일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day15.md)***
 
 
 
