@@ -86,14 +86,19 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 
 ## 남은 학습 목표
 
-- 소셜 로그인(카카오, 네이버, 구글) 구글
+- Spring boot RestAPI 작업
+
+- 소셜 로그인(카카오, 네이버, 구글) 중 구글 로그인 적용
+    - https://console.cloud.google.com/ 구글 클라우드 콜솔
+    - 프로젝트 생성
+    - OAuth 동의화면 설정
+    - 계속 진행..
 - 파일업로드 - AWS S3 체크
 
 
 - 리액트 적용
 - 리액트로 프론트엔드 설정
 - thymeleaf - 리액트로 변경
-- Spring boot RestAPI 작업
 
 - 8080 -> 80 서버
 - http -> https 변경	

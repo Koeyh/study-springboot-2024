@@ -13,17 +13,24 @@
         - /service/MemberService.java에 메일 주소로 검색하는 메서드 getMemberByEmail() 추가 
         - /service/MailService.java에 메일 전송 메서드 생성, 수정
             - UUID를 생성해서 메일로 전송하는 기능 추가
+
+            <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp010.png" width="730">
+
+
         - /entity/Reset.java 생성 -> H2콘솔에서 해당 테이블이 생성되는지 확인
 
         - /repository/ResetRepository.java 생성
+            - findByUuid() 추가
         - /service/ResetService.java 생성
+        - /service/MailService.java에 ResetService 객체 생성, 메일 전송 후 setReset() 사용
+            - _service에서 service 객체를 생성할 일이 잘 없으니 이런 경우도 기억해두자_
+        - /controller/MemberController.java에 /member/reset-password GetMapping 메서드 작성
+            - 파라미터로 uuid를 전달받아 reset 객체에 해당 uuid와 일치하는 email에 해당하는 사용자 정보 조회
+        - /templates/member/newpassword.html 생성
+            - input 태그에서 disabled 사용 시 데이터 전달이 되지않아 목적과 다른 실행결과 발생
+            - readonly 속성 사용하여 disabled와 동일한 폼으로 변경
+        - /controller/MemberController.java의 /member/reset-password @PostMapping 메서드 작성
+        - /service/MemberService.java의 setMember() 메서드 추가
+        - 새로 입력받은 패스워드에 인코딩을 적용하지 않아 오류 발생, 인코딩 적용으로 해결
 
-        - http://localhost:8080/user/resetpassword (회원가입과 유사하게 개발)
-        - 비밀번호 초기화 화면으로 이동
-        - 비밀번호, 비밀번호 확인 입력
-
-    2. 구글 로그인
-        - https://console.cloud.google.com/ 구글 클라우드 콜솔
-        - 프로젝트 생성
-        - OAuth 동의화면 설정
-        - 계속 진행..
+            <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp011.png" width="730">

@@ -12,6 +12,8 @@ import com.koeyh.backboard.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 
 @RequestMapping("/mail")
@@ -48,5 +50,6 @@ public class MailController {
 
         return "member/reset_result";   // /templates/member/reset_result.html 생셩
     }
+    
     
 }

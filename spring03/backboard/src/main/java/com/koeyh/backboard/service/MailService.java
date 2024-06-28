@@ -6,19 +6,21 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
+// @Transactional(readOnly = true)
 public class MailService {
 
     private final JavaMailSender javaMailSender;
+    // ResetService는 예외
+    private final ResetService resetService;
     // private final PasswordEncoder passwordEncoder;
     
     // 메일에서 초기화 할 화면으로 이동하기 위한 URL
@@ -56,6 +58,7 @@ public class MailService {
     }
 
     // 패스워드 초기화 메일 발송 메서드(초기화 중 핵심기능)
+    @Transactional
     public Boolean sendResetPasswordEmail(String email) {
 
         String uuid = makeUuid();
@@ -66,10 +69,17 @@ public class MailService {
         
         try {
             sendMail(email, subject, message);
+
+            saveUuidAndEmail(uuid, email);
             return true;
         } catch (Exception e) {
             return false;
         }
 
     }
+
+    // DB에 해당 내용 저장
+    private void saveUuidAndEmail(String uuid, String email) {
+        this.resetService.setReset(uuid, email);
+    } 
 }
