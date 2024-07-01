@@ -80,6 +80,8 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - 메일로 전송된 링크로 비밀번호 재설정 기능 적용(추가) 완료
 
 ## ***[14일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day14.md)***
+- React 적용
+- Rest API 적용
 
 ## ***[15일차 학습](https://github.com/Koeyh/study-springboot-2024/blob/main/Day15.md)***
 
