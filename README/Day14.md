@@ -119,16 +119,63 @@
 
     6. 목록 표시
         - for, map() 함수를 많이 사용함
+        - map()을 쓰면 for문보다 짧게 구현 가능
+        - 각 child 요소마다 key 속성이 필요! (없으면 경고 발생)
+            
+        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/react001.png" width="700">
+
+    7. ***이벤트 핸들링(중요!)***
+        - form + onSubmit, tag + onClick
+        - 이벤트에 파라미터 전달
+        - 파라미터가 필요해서 함수 뒤에 ()를 사용하면, 이벤트 순서에 따라 새로고침 후 자동 실행됨
+        - onClick = { () => function() } 과 같은 람다식으로 변경 필요
+
+    8. 컴포넌트 간 데이터 전달
+        - props 속성 사용
+        - _props.속성명.key명_ 의 형태로 값을 받아옴
+
+    9. 화면 업데이트
+        ***- useState : 앱 화면의 상태를 기억하고, 사용하기 위한 함수***
+        - import { useState } from 'react' : 필수 ! 
+
+        <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/react003.png" width="700">
 
 
 
-<img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/react001.png" width="700">
+    10. Hooks
+        - use로 시작하는 함수를 Hooks라고 호칭 (ex. useState, useEffect ..)
+        - useState : React 컴포넌트 상태를 추가, 보관
+            - 어느 페이지에, 어떻게 작성하느냐에 따라 결과가 달라지는 모습 확인
+        - useEffect : 컴포넌트에서 사이드 이펙트 수정할 때
+        - 기타 : useContext, useReaducer, useCallback, useRef ....
+
+- React 추가 내용
+    1. 리액트 관련 프레임워크
+        - Next.js -> 풀스택 React프레임워크
+        - Gatsby -> 정적사이트 React 프레임워크
+        - React Native -> Android, iOS 멀티플랫폼 모바일 프레임워크
+
+    2. npm 추가 라이브러리 설치
+        - > npm install react react-dom
+
+    3. VS Code 확장
+        - ES7 + React/Redux/React-Nat 설치
+        - VS Code React Refactor : 리팩팅 도구
+        - Import Cost : 라이브러리 비용 계산
+        - Simple React Snippets
+    
+    4. React 디버거 (React는 디버깅이 편리하지 못한 편 ??)
+        - Chrome, edge 브라우저별로 따로 존재
+        - React Developer Tools 개발자 도구 설치
+            - chrome -> 우측상단 더보기 -> 확장프로그램 -> react 검색
+
+            <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/react002.png" width="500">
 
 
-- Spring Boot JPA 프로젝트 개발 계속
-
-    1. spring03/frontboard(React) 생성
-
+- Spring Boot React 연동 프로젝트 개발 계속
+    1. React 프로젝트 생성
+        - 터미널에서 /spring03 이동
+        - npx create-react-app frontboard 입력
 
 
     2. backboard(Rest API) 적용
