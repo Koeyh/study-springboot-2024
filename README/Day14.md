@@ -119,8 +119,10 @@
 
     6. 목록 표시
         - for, map() 함수를 많이 사용함
-        
 
+
+
+<img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/react001.png" width="700">
 
 
 - Spring Boot JPA 프로젝트 개발 계속
@@ -138,4 +140,4 @@
 
 
 
-            <!-- <img src="https://raw.githubusercontent.com/Koeyh/study-springboot-2024/main/images/sp011.PNG" width="730"> -->
+            
