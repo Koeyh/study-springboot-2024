@@ -84,8 +84,11 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - props, Hooks(useState...) 등
 
 ## ***[15일차](https://github.com/Koeyh/study-springboot-2024/blob/main/README/Day15.md)***
+- React 게시판 작성
+- 정리 필요
 
 
+## ***[16일차](https://github.com/Koeyh/study-springboot-2024/blob/main/README/Day16.md)***
 
 ## 남은 학습 목표
 
