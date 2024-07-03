@@ -40,18 +40,18 @@ public class RestBoardController {
                        @RequestParam(value = "kw", defaultValue = "") String keyword) {
 
         Category cate = this.categoryService.getCategory(category); // cate는 Category 객체. 변수로 사용하면 안됨
-        Page<Board> paging = this.boardService.getList(page, keyword, cate); // 검색 및 카테고리 추가
-        // List<Board> list = paging.getContent();
+        Page<Board> pages = this.boardService.getList(page, keyword, cate); // 검색 및 카테고리 추가
+        // List<Board> list = pages.getContent();
         
         List<BoardDto> result = new ArrayList<BoardDto>();
-        // paging.forEach(brd -> result.add(BoardDto.builder().bno(brd.getBno()).title(brd.getTitle()).content(brd.getContent())
+        // pages.forEach(brd -> result.add(BoardDto.builder().bno(brd.getBno()).title(brd.getTitle()).content(brd.getContent())
         //                                         .createDate(brd.getCreateDate()).modifyDate(brd.getModifyDate())
         //                                         .writer(brd.getWriter().getUsername())
         //                                         .hit(brd.getHit())
         //                                         // .replyList(new ArrayList<ReplyDto>().add())
         //                                         .build()));
 
-        for (Board origin : paging) {
+        for (Board origin : pages) {
             List<ReplyDto> subList = new ArrayList<>();
 
             BoardDto bdDto = new BoardDto();
@@ -81,7 +81,7 @@ public class RestBoardController {
         }
 
         log.info(String.format("oooo Count of Board, trans list ooo", result.size()));
-        // model.addAttribute("paging", paging);   
+        // model.addAttribute("pages", pages);   
         // model.addAttribute("kw", keyword);
         // model.addAttribute("category", category);
 

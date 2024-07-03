@@ -9,7 +9,7 @@ _학습기간 : '24. 6. 12 ~ '24. 7. 4._
 - _이전 프로젝트에서 사용 해 보지 못한 Spring Security에 대한 복습 철저히 하기_
 
 ### 환경 및 도구
-- SpringBoot, MyBatis, JPA, Gradle, Thymeleaf, Oracle, H2, DBeaver, Docker
+- SpringBoot, MyBatis, JPA, Gradle, Thymeleaf, Oracle, H2, DBeaver, Docker, React
 
 #### 구성
 - _[1. Spring Boot(3.2.6) With MyBatis](https://github.com/Koeyh/study-springboot-2024/tree/main/spring02)_
@@ -84,11 +84,13 @@ public Todo getTodo(@PathVariable("tno") int tno) throws Exception {
 - props, Hooks(useState...) 등
 
 ## ***[15일차](https://github.com/Koeyh/study-springboot-2024/blob/main/README/Day15.md)***
-- React 게시판 작성
-- 정리 필요
-
+- /spring03/forntboard/ 위치에 새로운 React 프로젝트 생성
+- 게시판 폼 제작
+- /spring03/backboard/ 내 Spring Boot 프로젝트의 /restcontroller/RestBoardController 생성 및 작성
+- 데이터 연동 확인
 
 ## ***[16일차](https://github.com/Koeyh/study-springboot-2024/blob/main/README/Day16.md)***
+
 
 ## 남은 학습 목표
 

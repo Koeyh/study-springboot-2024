@@ -14,9 +14,23 @@ function BoardList() {
     // 함수 선언
     const getBoardList = async () => {
         var pageString = 'page=0';
-        const resp = (await axios.get("http://localhost:8080/api/board/list/free?" + pageString)).data;
-        setBoardList(resp);
-        console.log(resp);
+
+        try {   // 백엔드 서버가 실행되지 않으면 예외를 발생시킴. AXIOS ERROR
+            const resp = (await axios.get("http://localhost:8080/api/board/list/free?" + pageString));
+
+            if(resp.status === 200) {   // 정상(200코드)일 때
+                setBoardList(resp.data);
+                console.log(resp.data);
+            } else if (resp.status === 404) {
+                alert("서버가 페이지가 존재하지 않습니다");
+            } else if (resp.status === 500) {
+                alert("서버 오류 발생.\n 관리자에게 문의바랍니다.");
+            }
+
+        } catch (error) {
+            console.log("EEEEE :" + error);
+            alert("서버가 연결되지 않았습니다.");
+        }
     }
 
     useEffect(() => {
